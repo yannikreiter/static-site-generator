@@ -21,3 +21,6 @@ class TestHTMLNode(unittest.TestCase):
 			node.__repr__(),
 			"HTMLNode(tag: div, value: Hello, world!, children: None, props: {'href': 'https://boot.dev', 'class': 'greeting'})"
 		)
+
+if __name__ == "__main__":
+	unittest.main()
