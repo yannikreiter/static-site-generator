@@ -1,11 +1,23 @@
-from htmlnode import HTMLNode
-from textnode import TextNode, TextType
+from leafnode import LeafNode
+from parentnode import ParentNode
 
 
 def main():
-	text_node = TextNode("This is some anchor text", TextType.LINK, "https://www.boot.dev")
-	html_node = HTMLNode("p", "This is a paragraph", None, { "class": "bold" })
-	print(text_node)
-	print(html_node)
+    node = ParentNode(
+        "p",
+        [
+            LeafNode("b", "Bold text"),
+            LeafNode(None, "Normal text"),
+            LeafNode("i", "italic text"),
+            LeafNode(None, "Normal text"),
+            ParentNode("div", [
+                LeafNode("a", "https://boot.dev", {"class": "website"}),
+                LeafNode("p", "Some paragraph text")
+            ])
+        ],
+    )
+    html = node.to_html()
+    print(html)
+
 
 main()
