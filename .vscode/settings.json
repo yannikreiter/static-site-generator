@@ -1,8 +1,9 @@
 {
 	"github.copilot.enable": {
 		"*": false,
-		"plaintext": false,
-		"markdown": false,
-		"scminput": false
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.autopep8",
+		"editor.formatOnSave": true
 	}
 }
